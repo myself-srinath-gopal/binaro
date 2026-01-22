@@ -47,8 +47,8 @@ const ThumbnailCarousel = () => {
                 watchSlidesProgress
                 breakpoints={{
                     0: {
-                        slidesPerView: 1,
-                        // effect: 'slide',
+                        slidesPerView: 3,
+                        effect: 'slide',
                     },
                     480: {
                         slidesPerView: 2,
