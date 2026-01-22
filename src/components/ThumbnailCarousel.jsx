@@ -48,7 +48,7 @@ const ThumbnailCarousel = () => {
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
-                        effect: 'slide',
+                        // effect: 'slide',
                     },
                     480: {
                         slidesPerView: 2,
