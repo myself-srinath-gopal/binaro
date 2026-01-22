@@ -113,7 +113,7 @@ body {
 }
 
 section {
-    @apply pt-28 pb-10 md:pt-32 md:pb-20;
+    @apply pt-15 pb-10 md:pt-32 md:pb-20;
 }
 
 input::placeholder,
@@ -241,10 +241,10 @@ select {
 }
 
 .swiper-slide-thumb-active img {
-  opacity: 1;
-  border: 2px solid var(--primary);
+    opacity: 1;
 }
 
 .swiper-slide-thumb-active {
-  transform: scale(1.05);
+    transform: scale(1.05);
+    transition: all .3s ease-in-out;
 }

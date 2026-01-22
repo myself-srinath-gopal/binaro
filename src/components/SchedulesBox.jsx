@@ -5,16 +5,16 @@ import { conferences, intermissions } from "../data";
 const SchedulesBox = () => {
     return (
         <>
-            <div className="flex items-center flex-wrap w-full border border-gray-300 md:px-14 px-6 md:mt-14 mt-6 rounded-[1.4rem]">
+            <div className="flex items-center flex-wrap w-full border border-gray-300 md:px-6 px-3 md:mt-14 mt-6 rounded-lg sm:rounded-[1.4rem]">
                 {conferences.map((conference, index) => (
                     <React.Fragment key={index}  >
-                        <div className="flex items-center flex-wrap gap-6 justify-between w-full md:py-12 py-5 border-b border-gray-300 last:border-b-0">
-                            <div className="lg:min-w-96 min-w-max" >
-                                <h6 className="text-[22px] leading-[2.1rem] font-bold text-(--secondary) max-w-[18rem]">
+                        <div className="flex flex-wrap items-center gap-6 justify-between w-full md:py-12 py-5 border-b border-gray-300 last:border-b-0">
+                            <div className="lg:max-w-96 w-full" >
+                                <h6 className="flex flex-wrap text-lg sm:text-[22px] leading-[1.6rem] sm:leading-[2.1rem] font-semibold text-(--secondary) max-w-[18rem]">
                                     {conference.title}
                                 </h6>
                             </div>
-                            <div className="flex items-center flex-wrap gap-7.5 lg:min-w-96 min-w-max">
+                            <div className="flex max-[400px]:flex-col max-[400px]:items-start items-center flex-wrap gap-7.5 lg:min-w-96 min-w-max">
                                 <div className="flex items-center">
                                     {conference.profiles.map((profile, profileIndex) => (
                                         <img
@@ -29,10 +29,10 @@ const SchedulesBox = () => {
                                     ))}
                                 </div>
                                 <div>
-                                    <p className="text-lg font-normal text-(--SlateBlueText)">
+                                    <p className="sm:text-lg font-normal text-(--SlateBlueText)">
                                         Speech by
                                     </p>
-                                    <p className="text-lg font-medium text-(--secondary)">
+                                    <p className="sm:text-lg font-medium text-(--secondary)">
                                         {conference.speakers}
                                     </p>
                                 </div>
@@ -49,22 +49,22 @@ const SchedulesBox = () => {
 
                         {/* Insert intermissions at appropriate places */}
                         {index === 1 && (
-                            <div className="flex items-center flex-wrap justify-between w-full md:py-12 py-5 border-b border-gray-300">
+                            <div className="flex items-center flex-wrap gap-3 justify-between w-full md:py-12 py-5 border-b border-gray-300">
                                 <div className="lg:min-w-96 min-w-max">
-                                    <h6 className="text-[22px] leading-[2.1rem] font-bold text-(--secondary) max-w-[18rem]">
+                                    <h6 className="text-lg md:text-[22px] leading-[1.6rem] sm:leading-[2.1rem] font-semibold text-(--secondary) max-w-[18rem]">
                                         {intermissions[0].title}
                                     </h6>
                                 </div>
-                                <div className="flex items-center flex-wrap gap-7.5 lg:min-w-96 min-w-max">
+                                <div className="flex items-center flex-wrap gap-2 sm:gap-7.5 lg:min-w-96 min-w-max">
                                     <div className="flex items-center">
                                         <img
                                             src={intermissions[0].image}
                                             alt="coffee break"
-                                            className="w-10! h-10! rounded-full"
+                                            className="w-7 h-7 sm:w-10! sm:h-10! rounded-full"
                                         />
                                     </div>
                                     <div>
-                                        <p className="text-lg font-normal text-(--SlateBlueText) dark:text-opacity-80">
+                                        <p className="sm:text-lg font-normal text-(--SlateBlueText) dark:text-opacity-80">
                                             {intermissions[0].time}
                                         </p>
                                     </div>
@@ -74,22 +74,22 @@ const SchedulesBox = () => {
                         )}
 
                         {index === 3 && (
-                            <div className="flex items-center flex-wrap justify-between w-full md:py-12 py-5 border-b border-gray-300">
+                            <div className="flex items-center flex-wrap justify-between gap-5 w-full md:py-12 py-5 border-b border-gray-300">
                                 <div className="lg:min-w-96 min-w-max">
-                                    <h6 className="text-[22px] leading-[2.1rem] font-bold text-(--secondary) max-w-[18rem]">
+                                    <h6 className="text-lg md:text-lg md:text-[22px] leading-[1.6rem] sm:leading-[2.1rem] font-semibold text-(--secondary) max-w-[18rem]">
                                         {intermissions[1].title}
                                     </h6>
                                 </div>
-                                <div className="flex items-center flex-wrap gap-7.5 lg:min-w-96 min-w-max">
+                                <div className="flex items-center flex-wrap gap-2 sm:gap-7.5 lg:min-w-96 min-w-max">
                                     <div className="flex items-center">
                                         <img
                                             src={intermissions[1].image}
                                             alt="lunch break"
-                                            className="w-10! h-10! rounded-full"
+                                            className="w-7 h-7 sm:w-10! sm:h-10! rounded-full"
                                         />
                                     </div>
                                     <div>
-                                        <p className="text-lg font-normal text-(--SlateBlueText) dark:text-opacity-80">
+                                        <p className="sm:text-lg font-normal text-(--SlateBlueText) dark:text-opacity-80">
                                             {intermissions[1].time}
                                         </p>
                                     </div>

@@ -44,7 +44,7 @@ const BoxSlider = () => {
                 { day: 27, month: "DEC 2026" },
             ].map((item, i) => (
                 <SwiperSlide key={i}>
-                    <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary) transition">
+                    <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)/60 transition">
                         <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">
                             {item.day}
                         </h5>
