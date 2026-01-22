@@ -241,10 +241,9 @@ select {
 }
 
 .swiper-slide-thumb-active img {
-    opacity: 1;
+  opacity: 1;
 }
 
 .swiper-slide-thumb-active {
-    transform: scale(1.05);
-    transition: all .3s ease-in-out;
+  transform: scale(1.05);
 }

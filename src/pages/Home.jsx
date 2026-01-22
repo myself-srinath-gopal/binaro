@@ -10,7 +10,7 @@ import WorkSpeakers from '../components/WorkSpeakers'
 const Home = () => {
     return (
         <>
-            <section>
+            <section className='pt-28!'>
                 <div className="max-w-6xl mx-auto px-7">
                     <div className="grid lg:grid-cols-12 grid-cols-1 items-center gap-8">
                         <div className='col-span-6'>
