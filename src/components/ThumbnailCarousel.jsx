@@ -43,8 +43,6 @@ const ThumbnailCarousel = () => {
                 onSwiper={setThumbsSwiper}
                 spaceBetween={12}
                 slidesPerView={3}
-                centeredSlides
-                watchSlidesProgress
                 breakpoints={{
                     0: {
                         slidesPerView: 3,
