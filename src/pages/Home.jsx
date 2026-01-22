@@ -162,7 +162,7 @@ const Home = () => {
                     <div className="max-w-6xl mx-auto px-7">
                         <h2 className="text-center pb-10">Upcoming Conference</h2>
                         <div>
-                            <div>
+                            <div className='slide-container'>
                                 <BoxSlider />
                             </div>
                             <div>
