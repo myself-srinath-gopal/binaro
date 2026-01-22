@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 
 const BoxSlider = () => {
@@ -43,15 +43,6 @@ const BoxSlider = () => {
             },
         ],
     };
-
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-        window.dispatchEvent(new Event("resize"));
-    }, []);
-
-    if (!mounted) return null
 
     return (
         <>
