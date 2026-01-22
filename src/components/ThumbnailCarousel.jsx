@@ -1,156 +1,76 @@
-import React, { useRef, useState, useEffect } from "react";
-import Slider from "react-slick";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+    Thumbs,
+    EffectFade,
+} from "swiper/modules";
+
+const images = [
+    "/assets/Slider_1.png",
+    "/assets/Slider_2.jpg",
+    "/assets/Slider_3.png",
+    "/assets/Slider_4.jpg",
+];
 
 const ThumbnailCarousel = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [settingsFor, setSettingsFor] = useState({});
-    const [settingsNav, setSettingsNav] = useState({});
-    const mainSliderRef = useRef(null);
-    const navSliderRef = useRef(null);
-
-    useEffect(() => {
-        setSettingsFor({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: navSliderRef.current,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false,
-                        fade: true,
-                        asNavFor: navSliderRef.current,
-                    },
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false,
-                        fade: true,
-                        asNavFor: navSliderRef.current,
-                    },
-                },
-            ],
-        });
-
-        setSettingsNav({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            asNavFor: mainSliderRef.current,
-            dots: true,
-            centerMode: true,
-            focusOnSelect: true,
-            beforeChange: (oldIndex, newIndex) =>
-                setActiveIndex(newIndex),
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        centerMode: true,
-                        focusOnSelect: true,
-                    },
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        centerMode: true,
-                        focusOnSelect: true,
-                    },
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        centerMode: true,
-                        focusOnSelect: true,
-                    },
-                },
-            ],
-        });
-    }, []);
-
-    useEffect(() => {
-        if (mainSliderRef.current) {
-            mainSliderRef.current.slickGoTo(activeIndex);
-        }
-    }, [activeIndex]);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     return (
-        <>
-            <div>
-                <Slider {...settingsFor} ref={mainSliderRef} className="pb-3">
-                    <div>
+        <div>
+            {/* Main Slider */}
+            <Swiper
+                modules={[Thumbs, EffectFade]}
+                effect="fade"
+                fadeEffect={{ crossFade: true }}
+                slidesPerView={1}
+                thumbs={{ swiper: thumbsSwiper }}
+                className="mb-5"
+            >
+                {images.map((src, i) => (
+                    <SwiperSlide key={i}>
                         <img
-                            src="/assets/Slider_1.png"
+                            src={src}
                             alt="Conference"
-                            className="rounded-lg"
+                            className="rounded-lg w-full"
                         />
-                    </div>
-                    <div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            {/* Thumbnail Slider */}
+            <Swiper
+                modules={[Thumbs]}
+                onSwiper={setThumbsSwiper}
+                spaceBetween={12}
+                slidesPerView={3}
+                centeredSlides
+                watchSlidesProgress
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        effect: 'slide',
+                    },
+                    480: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        effect: 'fade'
+                    },
+                }}
+                className="cursor-pointer"
+            >
+                {images.map((src, i) => (
+                    <SwiperSlide key={i}>
                         <img
-                            src="/assets/Slider_2.jpg"
-                            alt="Conference"
-                            className="rounded-lg"
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src="/assets/Slider_3.png"
-                            alt="Conference"
-                            className="rounded-lg"
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src="/assets/Slider_4.jpg"
-                            alt="Conference"
-                            className="rounded-lg"
-                        />
-                    </div>
-                </Slider>
-                <Slider {...settingsNav} ref={navSliderRef} className="thumb">
-                    <div>
-                        <img
-                            src="/assets/Slider_1.png"
+                            src={src}
                             alt="Thumbnail"
-                            className="rounded-lg"
+                            className="rounded-lg opacity-50 hover:opacity-100 transition"
                         />
-                    </div>
-                    <div>
-                        <img
-                            src="/assets/Slider_2.jpg"
-                            alt="Thumbnail"
-                            className="rounded-lg"
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src="/assets/Slider_3.png"
-                            alt="Thumbnail"
-                            className="rounded-lg"
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src="/assets/Slider_4.jpg"
-                            alt="Thumbnail"
-                            className="rounded-lg"
-                        />
-                    </div>
-                </Slider>
-            </div>
-        </>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     );
 };
 

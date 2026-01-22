@@ -77,6 +77,11 @@ body {
     @apply px-2;
 }
 
+.swiper-button-prev>svg,
+.swiper-button-next>svg {
+    @apply w-6! h-6!;
+}
+
 .testimonial .slick-prev {
     @apply left-[90%];
 }
@@ -233,4 +238,13 @@ select {
 
 .blog-details h3 {
     @apply mb-6 text-2xl font-bold sm:text-[1.75rem];
+}
+
+.swiper-slide-thumb-active img {
+  opacity: 1;
+  border: 2px solid var(--primary);
+}
+
+.swiper-slide-thumb-active {
+  transform: scale(1.05);
 }

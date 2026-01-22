@@ -1,102 +1,60 @@
 import React from "react";
-import Slider from "react-slick";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 const BoxSlider = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 7,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1280,
-                settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    arrows: false,
-                },
-            },
-        ],
-    };
-
     return (
-        <>
-            <Slider {...settings} className="text-center">
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">16</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">JAN 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">17</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">FEB 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">18</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">MAR 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">19</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">APR 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">20</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">MAY 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">21</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">JUN 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">22</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">JUL 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">23</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">AUG 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">24</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">SEP 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">25</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">OCT 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">26</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">NOV 2026</p>
-                </div>
-                <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary)">
-                    <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">27</h5>
-                    <p className="text-xs font-medium text-gray-400 group-hover:text-white">DEC 2026</p>
-                </div>
-            </Slider>
-        </>
+        <Swiper
+            modules={[Navigation]}
+            spaceBetween={16}
+            navigation
+            freeMode={true}
+            breakpoints={{
+                0: {
+                    slidesPerView: 2,
+                    navigation: false,
+                },
+                480: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 4,
+                    navigation: true,
+                },
+                1024: {
+                    slidesPerView: 5,
+                },
+                1280: {
+                    slidesPerView: 7,
+                },
+            }}
+        >
+            {[
+                { day: 16, month: "JAN 2026" },
+                { day: 17, month: "FEB 2026" },
+                { day: 18, month: "MAR 2026" },
+                { day: 19, month: "APR 2026" },
+                { day: 20, month: "MAY 2026" },
+                { day: 21, month: "JUN 2026" },
+                { day: 22, month: "JUL 2026" },
+                { day: 23, month: "AUG 2026" },
+                { day: 24, month: "SEP 2026" },
+                { day: 25, month: "OCT 2026" },
+                { day: 26, month: "NOV 2026" },
+                { day: 27, month: "DEC 2026" },
+            ].map((item, i) => (
+                <SwiperSlide key={i}>
+                    <div className="bg-(--IcyBreeze) pt-5 pb-7 rounded-lg text-center group hover:bg-(--primary) transition">
+                        <h5 className="text-gray-400 text-[34px] leading-[2.76rem] font-normal group-hover:text-white">
+                            {item.day}
+                        </h5>
+                        <p className="text-xs font-medium text-gray-400 group-hover:text-white">
+                            {item.month}
+                        </p>
+                    </div>
+                </SwiperSlide>
+            ))}
+        </Swiper>
     );
 };
 
