@@ -17,7 +17,7 @@ const Schedules = () => {
                 ]}
             />
             <section>
-                <div className="max-w-6xl mx-auto upcoming">
+                <div className="max-w-6xl mx-auto upcoming px-7">
                     <BoxSlider />
                     <SchedulesBox />
                 </div>
