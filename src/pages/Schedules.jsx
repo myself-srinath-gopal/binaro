@@ -7,7 +7,7 @@ import BookingBanner from '../components/BookingBanner'
 
 const Schedules = () => {
     return (
-        <div className='px-7'>
+        <>
             <HeroSub
                 title="Event Schedules"
                 description="Stay updated with our comprehensive schedules, designed to keep you informed and organized."
@@ -26,7 +26,7 @@ const Schedules = () => {
                 <Testimonials />
                 <BookingBanner />
             </div>
-        </div>
+        </>
     )
 }
 

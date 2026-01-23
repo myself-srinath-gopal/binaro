@@ -53,10 +53,10 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className="flex items-center space-x-4">
-                        <Link to="/login" className='hidden! lg:block! btn_outline btn-2 hover-outline-slide-down rounded-lg'>
+                        <Link to="#" className='hidden! lg:block! btn_outline btn-2 hover-outline-slide-down rounded-lg'>
                             <span className="py-2! px-4!">Sign In</span>
                         </Link>
-                        <Link to="/regsiter" className='hidden! lg:block! btn btn-1 hover-filled-slide-down rounded-lg overflow-hidden'>
+                        <Link to="#" className='hidden! lg:block! btn btn-1 hover-filled-slide-down rounded-lg overflow-hidden'>
                             <span className="py-2! px-4!">Sign Up</span>
                         </Link>
                         <button
@@ -108,7 +108,7 @@ const Header = () => {
                 </div>
                 <nav className="flex flex-col items-start p-4">
                     {headerData.map((item, index) => (
-                        <MobileHeaderLink key={index} item={item} />
+                        <MobileHeaderLink key={index} item={item} setNavbarOpen={setNavbarOpen} />
                     ))}
                     <div className="mt-4 flex flex-col space-y-4 w-full">
                         <Link

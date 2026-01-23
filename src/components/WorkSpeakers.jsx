@@ -3,11 +3,11 @@ import { speakers } from '../data'
 
 const WorkSpeakers = ({ showTitle = true }) => {
     return (
-        <section>
+        <section className='px-7'>
             {showTitle && (
                 <h2 className="text-center pb-12">World Class Speakers</h2>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mx-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
                 {
                     speakers.map((speaker, index) => (
                         <div key={index} className={`col-span-1 overflow-hidden ${index % 2 === 1 ? "lg:mt-28 mt-0" : ""}`}>
