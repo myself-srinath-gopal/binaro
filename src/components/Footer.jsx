@@ -16,19 +16,16 @@ const Footer = () => {
                     <div>
                         <ul className="flex items-center flex-wrap md:gap-7.5 gap-3 md:py-0 py-5">
                             <li className="text-(--PaleCerulean) sm:text-xl text-lg font-normal transition-all duration-0.4s hover:text-(--primary)">
-                                <Link to="#">Home</Link>
+                                <Link to="/">Home</Link>
                             </li>
                             <li className="text-(--PaleCerulean) sm:text-xl text-lg font-normal transition-all duration-0.4s hover:text-(--primary)">
-                                <Link to="#">Speakers</Link>
+                                <Link to="/speakers">Speakers</Link>
                             </li>
                             <li className="text-(--PaleCerulean) sm:text-xl text-lg font-normal transition-all duration-0.4s hover:text-(--primary)">
-                                <Link to="#">Schedule</Link>
+                                <Link to="/schedules">Schedules</Link>
                             </li>
                             <li className="text-(--PaleCerulean) sm:text-xl text-lg font-normal transition-all duration-0.4s hover:text-(--primary)">
-                                <Link to="#">About</Link>
-                            </li>
-                            <li className="text-(--PaleCerulean) sm:text-xl text-lg font-normal transition-all duration-0.4s hover:text-(--primary)">
-                                <Link to="#">Sponsors</Link>
+                                <Link to="/contact">Contact</Link>
                             </li>
                         </ul>
                     </div>
